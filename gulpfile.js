@@ -10,6 +10,7 @@ var webserver = require('gulp-webserver');
 var gutil = require('gulp-util'); //реліз
 var fs = require('fs'); // файлова система
 var htmlmin = require('gulp-htmlmin');
+var less = require('gulp-less');
 
 gulp.task('default', ['cssConcat', 'jsUglify', 'imageMin', 'minify', 'watch', 'webserver']);
 
@@ -63,4 +64,11 @@ gulp.task('cssConcat', function(){
 	.pipe(cssmin())
 	.pipe(concat('all.css'))
 	.pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('less', function () {
+  return gulp.src('./app/less/**/*.less')
+    .pipe(less())
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('./app/css'));
 });

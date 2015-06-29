@@ -1,2 +1,3 @@
 body{background:red}
 body{border:1px solid red}
+.box{color:#fe33ac;border-color:#fdcdea}.box div{box-shadow:0 0 5px rgba(0,0,0,.3)}
